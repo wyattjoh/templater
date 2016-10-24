@@ -1,3 +1,4 @@
 {
-  "filename": "{{ .Filename }}"
+  "filename": "{{ .Filename }}",
+  "user": "{{ .Env.USER }}"
 }

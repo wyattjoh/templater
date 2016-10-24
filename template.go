@@ -78,7 +78,7 @@ func isTrue(s string) bool {
 	return false
 }
 
-func generateFile(templatePath, destPath string, ctx map[string]interface{}) bool {
+func generateFile(templatePath, destPath string, ctx *Context) bool {
 	tmpl := template.New(filepath.Base(templatePath)).Funcs(template.FuncMap{
 		"contains": contains,
 		"exists":   exists,
