@@ -34,10 +34,17 @@ func main() {
 		os.Exit(1)
 	}
 
-	// load in the context
-	ctx, err := loadContext(contextFlag)
-	if err != nil {
-		log.Fatalf("can't load context file: %s", err.Error())
+	ctx := &Context{}
+
+	var err error
+
+	if contextFlag != "" {
+
+		// load in the context
+		ctx, err = loadContext(contextFlag)
+		if err != nil {
+			log.Fatalf("can't load context file: %s", err.Error())
+		}
 	}
 
 	for _, t := range templatesFlag {
